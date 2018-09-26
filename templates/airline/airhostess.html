@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>AirKGP</title>
+    {% load staticfiles %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'airline/airhostess.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="row1">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">AIRKGP</div>
+    <div class="row5 col-sm-offset-2 col-sm-2">
+        <form action="{% url 'employee' %}" method="post">
+            {% csrf_token %}
+        <button class="button button2 btn btn-default">Logout</button>
+            </form>
+    </div>
+</div>
+
+	<label class="label1 control-label col-sm-offset-2 col-sm-7">Hello {{ name }}!</label>
+	<div class="col-sm-3">		
+	</div>
+
+<div class="row2" style="height:250px;"></div>
+
+<div class="col-sm-offset-3 col-sm-6">
+<table style="width:100%">
+	<th>Next Flight timing: </th><th></th>
+    <tr>
+      <td>Flight Id</td>
+      <td>{{ airhostess_next_flight_id}}</td>
+    </tr>
+    <tr>
+      <td>From</td>
+      <td>Mumbai</td>
+    </tr>
+    <tr>
+      <td>To</td>
+      <td>Chennai</td>
+    </tr>
+    <tr>
+      <td>Timing</td>
+      <td>{{dateandtime }}</td>
+    </tr>
+</table>
+</div>
+
+<div class="row1" style="height:400px;"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+body {
+    background-image: url("images/bg6.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.row1 {
+	text-align: center;
+	font-size: 120px;
+	text-shadow: 3px 2px gray;
+	color: white;
+    font-decoration: bold;
+    font-family: 'Amatic SC', cursive;
+}
+input[type=submit] {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+    height: 100px;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 48px;
+	border-radius: 12px;
+    font-family: 'Amatic SC', cursive;
+}
+h1 {
+	color:white;
+	font-style: italic;
+	font-size: 48px;
+}

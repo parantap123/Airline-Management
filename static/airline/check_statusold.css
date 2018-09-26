@@ -1,0 +1,63 @@
+body {
+    background-image: url("images/bg3.jpg");
+}
+.row1 {
+	text-align: center;
+	font-size: 90px;
+	text-decoration: underline;
+	text-shadow: 3px 2px gray;
+	color: #0000ff;
+}
+h2 {
+	color: black;
+}
+label {
+	color: white;
+	font-size: 20px;
+}
+.label1 {
+	color: black;
+	font-size: 40px;
+}
+input[type=text] {
+	background-color: #eeeeee;
+	padding: 10px 20px;
+	border-radius: 12px;
+}
+input[type=password] {
+	border-radius: 12px;
+	background-color: #eeeeee;
+}
+input[type=submit] {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 40px 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+	border-radius: 12px;
+}
+.button2 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+	border-radius: 12px;
+}
+.button1 {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+	padding: 0px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+	border-radius: 12px;
+}

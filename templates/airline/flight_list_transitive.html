@@ -1,0 +1,12 @@
+<html>
+<form action="{% url 'flight_book' customer.username %}" method="post">
+{% csrf_token %}
+{% for list1, list2 in  list  %}
+<tr>
+        <th><input type="radio" name="ticket" value="{{list1.flight_id.flight_id}}:{{ list1.fromLocation }}:{{list1.toLocation }}:{{list2.date_and_time}}:{{list2.flight_id.flight_id}}:{{ list2.fromLocation }}:{{list2.toLocation }}:{{list2.date_and_time}}"> {{forloop.counter}}</th>
+		<th>{{list1.fromLocation}} - </th><th>{{list2.fromLocation }} - {{list2.toLocation }} </th><th> Rs. 1000 </th>
+        <br>
+</tr>
+{% endfor %}
+<button type="submit" class="button button1 btn btn-default">Book tickets</button>
+</form>

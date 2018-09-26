@@ -1,0 +1,101 @@
+body {
+    background-image: url("images/bg6.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.row1 {
+    height:200px;
+	text-align: center;
+	font-size: 120px;
+	text-shadow: 3px 2px gray;
+	color: white;
+    font-decoration: bold;
+    font-family: 'Amatic SC', cursive;
+}
+.row5 {
+    padding-top: 50px;
+}
+.well   {
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+}
+h2 {
+	color: black;
+}
+label {
+	color: black;
+	font-size: 25px;
+}
+.label1 {
+	color: black;
+	font-size: 40px;
+}
+.label2 {
+	color: black;
+	font-size: 20px;
+}
+.label3 {
+	color: black;
+	font-size: 20px;
+	background-color: #dddddd;
+}
+input[type=text] {
+	background-color: #eeeeee;
+	border-radius: 12px;
+	height: 50px;
+}
+input[type=password] {
+	border-radius: 12px;
+	background-color: #eeeeee;
+}
+input[type=submit] {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+	border-radius: 12px;
+    font-family: 'Amatic SC', cursive;
+}
+.button2 {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+ 	width: 200px;
+    height: 75px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+	border-radius: 12px;
+    font-family: 'Amatic SC', cursive;
+}
+tr:hover {background-color:#dddddd;}
+th {
+    background-color: #000000;
+    color: white;
+	height: 50px;
+	font-size: 32px;
+	color: gray
+}
+td {
+    background-color: #ffffff;
+    color: black;
+	height: 50px;
+	background-color: rgba(255,255,255,0.5);
+	font-size: 24px;
+	color: #0a0a0a;
+}
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}

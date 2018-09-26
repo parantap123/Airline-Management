@@ -1,0 +1,260 @@
+<html>
+<head>
+<title>AirKGP</title>
+    {% load staticfiles %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'airline/get_boarding.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+body {
+    background-image: url("images/bg6.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.row1 {
+    height:200px;
+	text-align: center;
+	font-size: 120px;
+	text-shadow: 3px 2px gray;
+	color: white;
+    font-decoration: bold;
+    font-family: 'Amatic SC', cursive;
+}
+.row5 {
+    padding-top: 50px;
+}
+.well   {
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+}
+h2 {
+	color: black;
+}
+label {
+	color: black;
+	font-size: 25px;
+}
+.label1 {
+	color: black;
+	font-size: 40px;
+}
+.label2 {
+	color: black;
+	font-size: 20px;
+}
+.label3 {
+	color: black;
+	font-size: 20px;
+	background-color: #dddddd;
+}
+input[type=text] {
+	background-color: #eeeeee;
+	border-radius: 12px;
+	height: 50px;
+}
+input[type=password] {
+	border-radius: 12px;
+	background-color: #eeeeee;
+}
+input[type=submit] {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+	border-radius: 12px;
+    font-family: 'Amatic SC', cursive;
+}
+.button2 {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+ 	width: 200px;
+    height: 75px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+	border-radius: 12px;
+    font-family: 'Amatic SC', cursive;
+}
+th {
+    background-color: #000000;
+    color: white;
+	height: 50px;
+	font-size: 32px;
+	color: gray
+}
+td {
+    background-color: #ffffff;
+    color: black;
+	height: 50px;
+	background-color: rgba(255,255,255,0.5);
+	font-size: 24px;
+	color: #0a0a0a;
+}
+table {
+    border-collapse: collapse;
+}
+
+table {
+    border: 3px solid black;
+}
+</style>
+</head>
+<body>
+<div class="row1">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">AIRKGP</div>
+    <div class="row5 col-sm-offset-2 col-sm-2">
+        <form action="{% url 'employee' %}" method="post">
+            {% csrf_token %}
+        <button class="button button2 btn btn-default">Logout</button>
+            </form>
+    </div>
+</div>
+
+	<label class="label1 control-label col-sm-offset-2 col-sm-7">Hello {{ name }}!</label>
+	<div class="col-sm-3">		
+	</div>
+
+<div class="row2" style="height:100px;"></div>
+
+<div class="col-sm-offset-2 col-sm-4">
+<div class="well">
+  <h2>Ticket details:</h2>
+  <form class="form-horizontal" action="{% url 'got_status' customer.username %}" method="post">
+      {% csrf_token %}
+    <div class="form-group">
+      <label class="control-label col-sm-3" for="ticketid">Ticket ID:</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control" id="ticketid" placeholder="Enter ticketid" name="ticketid">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-3 col-sm-4">
+        <input type="submit" class="btn btn-default" value="Get Status">
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+<div class="col-sm-6"></div>
+
+<!--
+<div class="row2" style="height:275px;"></div>
+<div class="col-sm-offset-2 col-sm-7">
+    <div class="form-group">
+      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Ticket Id:</label>
+      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ ticket_details.ticket_id }}</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Flight Id:</label>
+      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ flight_details.flight_id_id }}</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">From:</label>
+      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ flight_details.fromLocation }}</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">To:</label>
+      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ flight_details.toLocation }}</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Scheduled Departure Time:</label>
+      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ flight_details.sche_dept }}</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Scheduled Arrival Time:</label>
+      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ flight_details.sche_arrival }}</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Seat Number:</label>
+      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ seat_details.seat_no }}</label>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Food Preference:</label>
+      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ seat_details.food_preference }}</label>
+    </div>
+{#    <div class="form-group">#}
+{#        <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Expected Departure Time:</label>#}
+{#        <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ flight_details.actual_dept }}</label>#}
+{#    </div>#}
+{#    <div class="form-group">#}
+{#        <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Expected Arrival Time:</label>#}
+{#        <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ flight_details.actual_arrival }}</label>#}
+{#    </div>#}
+{#    <div class="form-group">#}
+{#      <label class="control-label col-sm-offset-1 col-sm-3 label2" for="Gender">Current Delay in Flight:</label>#}
+{#      <label class="control-label col-sm-offset-1 col-sm-7 label2" for="Gender">{{ delayInDeparture }}:</label>#}
+{#    </div>#}
+</div>
+-->
+
+<div class="row2" style="height:300px;"></div>
+<div class="col-sm-offset-2 col-sm-8">
+<table style="width:100%">
+	<th>Your Boarding Pass: </th><th></th>
+    <tr>
+      <td>Ticket Id</td>
+      <td>{{ ticket_details.ticket_id }}</td>
+    </tr>
+    <tr>
+      <td>Flight Id</td>
+      <td>{{ flight_details.flight_id_id }}</td>
+    </tr>
+    <tr>
+      <td>From</td>
+      <td>{{ flight_details.fromLocation }}</td>
+    </tr>
+    <tr>
+      <td>To</td>
+      <td>{{ flight_details.toLocation }}</td>
+    </tr>
+    <tr>
+      <td>Scheduled Departure Time</td>
+      <td>{{ flight_details.sche_dept }}</td>
+    </tr>
+    <tr>
+      <td>Scheduled Arrival Time</td>
+      <td>{{ flight_details.sche_arrival }}</td>
+    </tr>
+    <tr>
+        <td>Food preference</td>
+        <td>{{ seat_details.food_preference }}</td>
+    </tr>
+    <tr>
+        <td>Seat No.</td>
+        <td>{{ seat_details.seat_no }}</td>
+    </tr>
+	<tr>
+        <td>Gate No.</td>
+        <td>10</td>
+    </tr>
+    <tr>
+      <td>Current Delay in Flight</td>
+      <td>{{ delayInDeparture }}:</td>
+    </tr>
+</table>
+</div>
+
+<div class="row2" style="height:350px;"></div>
+	<label class="label1 control-label col-sm-offset-2 col-sm-7"></label>
+<form action="{% url 'go_back' customer.username %}" method="post">
+    {% csrf_token %}
+	<div class="col-sm-3">
+		<button class="button button2 btn btn-default">Go Back</button>
+	</div>
+</form>
+
+</body>
+</html>
+

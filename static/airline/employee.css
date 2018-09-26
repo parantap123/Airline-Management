@@ -1,0 +1,53 @@
+body {
+    background-image: url("images/bg6.jpg");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.row1 {
+    height:200px;
+	text-align: center;
+	font-size: 120px;
+	text-shadow: 3px 2px gray;
+	color: white;
+    font-decoration: bold;
+    font-family: 'Amatic SC', cursive;
+}
+.row5 {
+    padding-top: 50px;
+}
+.well   {
+    background-color: rgba(255,255,255,0.8);
+    border: none;
+}
+h2 {
+	color: black;
+}
+label {
+	color: black;
+	font-size: 20px;
+}
+input[type=text] {
+	background-color: #eeeeee;
+	border-radius: 12px;
+	width: 300px;
+}
+input[type=password] {
+	border-radius: 12px;
+	background-color: #eeeeee;
+	width: 300px;
+}
+input[type=submit] {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+	border-radius: 12px;
+    font-family: 'Amatic SC', cursive;
+}
